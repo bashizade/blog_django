@@ -866,16 +866,20 @@ html {
   display: flex;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-full {
+  height: 100%;
+}
+
 .w-64 {
   width: 16rem;
 }
 
 .w-full {
   width: 100%;
-}
-
-.flex-col-reverse {
-  flex-direction: column-reverse;
 }
 
 .bg-black {
