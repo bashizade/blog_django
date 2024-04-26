@@ -11,9 +11,9 @@ class Article(models.Model):
     description = models.TextField(verbose_name="متن خبر")
     image = models.ImageField(upload_to="article", verbose_name="عکس شاخص")
     hashtags = models.TextField(verbose_name="هشتگ ها")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    publish = models.DateTimeField(default=timezone.now)
-    status = models.BooleanField(default=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="دسته بندی", related_name="category")
+    publish = models.DateTimeField(default=timezone.now, verbose_name="تاریخ انتشار")
+    status = models.BooleanField(default=True, verbose_name="وضعیت نمایش")
 
     def __str__(self):
         return self.title
