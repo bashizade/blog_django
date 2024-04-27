@@ -7,14 +7,14 @@ from article.models import Article
 
 def index(request):
     articles = Article.objects.all()
-    return render(request, 'home.html', {'articles': articles})
+    return render(request, 'main/pages/home.html', {'articles': articles})
 
 
 def articles_page(request):
     articles = Article.objects.all()
-    return render(request, 'articles.html', {'articles': articles})
+    return render(request, 'main/pages/articles.html', {'articles': articles})
 
 
 def article_detail(request, article_id):
     article = Article.objects.get(id=article_id)
-    return render(request, 'article_detail.html', {'article': article})
+    return render(request, 'main/pages/article_detail.html', {'article': article})

@@ -13,7 +13,7 @@
 <body>
 <div class="flex h-screen relative" x-data="{menu:false}">
     <div class="w-full md:pr-64">
-        {% include 'layout/top-bar.html' %}
+        {% include 'admin_panel/layout/top-bar.html' %}
         <main class="p-2 pt-16 h-screen text-right">
             {% block main %}{% endblock %}
         </main>
@@ -21,7 +21,7 @@
             <span class="bg-slate-800 p-2 rounded text-white">طراحی شده توسط : <a href="https://bashizade.github.io" target="_blank">امیرحسین باشی زاده</a></span>
         </div>
     </div>
-    {% include 'layout/side-bar.html' %}
+    {% include 'admin_panel/layout/side-bar.html' %}
 </div>
 
 <script src="{% static 'alpinejs.js' %}"></script>
