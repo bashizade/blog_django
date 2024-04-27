@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'output.css' %}">
 </head>
 <body>
+{% include 'main/components/header.html' %}
 main page
+{% include 'main/components/footer.html' %}
 <script src="{% static 'alpinejs.js' %}"></script>
 </body>
 </html>
