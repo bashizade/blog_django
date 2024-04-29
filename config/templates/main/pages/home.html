@@ -1,1 +1,16 @@
 {% extends 'main/layout/master.html' %}
+
+{% block main %}
+<div class="w-full p-1 rounded overflow-hidden relative" x-data="{images:[{% for slide in slides %}'{{slide.image}}',{% endfor %}],slideIndex:0}">
+    <div>
+        <img x-bind:src="'static/'+images[slideIndex]" class="w-full" alt="slide" loading="eager">
+    </div>
+    <div class=" absolute top-1/2 left-2 text-white">
+        <span class="p-4 bg-black/50 rounded-full" @click="slideIndex = slideIndex>images.length ? slideIndex - 1 : 0 "> < </span>
+    </div>
+    <div class=" absolute top-1/2 right-2 text-white">
+        <span class="p-4 bg-black/50 rounded-full" @click="slideIndex = slideIndex<images.length ? slideIndex + 1 : 0 "> > </span>
+    </div>
+</div>
+
+{% endblock %}

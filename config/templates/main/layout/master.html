@@ -8,7 +8,12 @@
 </head>
 <body>
 {% include 'main/components/header.html' %}
-main page
+<div class="flex flex-col items-center ">
+    <div class="max-w-5xl w-full bg-gray-200 my-2 p-2 rounded">
+        {% block main %}{% endblock %}
+    </div>
+</div>
+
 {% include 'main/components/footer.html' %}
 <script src="{% static 'alpinejs.js' %}"></script>
 </body>
