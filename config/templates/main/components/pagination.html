@@ -1,0 +1,21 @@
+{% if is_paginated %}
+<div class="join mt-4">
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}"><button class="join-item btn">قبلی</button></a>
+    {% else %}
+    <button class="join-item btn" disabled>قبلی</button>
+    {% endif %}
+    {% for i in paginator.page_range %}
+    {% if page_obj.number == i %}
+    <button class="join-item btn btn-active">{{ i }}</button>
+    {% else %}
+    <a href="?page={{ i }}"><button class="join-item btn">{{ i }}</button></a>
+    {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}"><button class="join-item btn">بعدی</button></a>
+    {% else %}
+    <button class="join-item btn" disabled>بعدی</button>
+    {% endif %}
+</div>
+{% endif %}

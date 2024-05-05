@@ -9,7 +9,7 @@ class Article(models.Model):
     title = models.CharField(max_length=255, verbose_name="عنوان")
     info = models.TextField(verbose_name="خلاصه مطلب")
     description = models.TextField(verbose_name="متن خبر")
-    image = models.ImageField(upload_to="article", verbose_name="عکس شاخص")
+    image = models.ImageField(upload_to="static/article", verbose_name="عکس شاخص")
     hashtags = models.TextField(verbose_name="هشتگ ها")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="دسته بندی", related_name="category")
     publish = models.DateTimeField(default=timezone.now, verbose_name="تاریخ انتشار")

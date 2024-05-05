@@ -17,11 +17,11 @@
 <div class="grid grid-cols-3 gap-2">
     <h1 class="text-center col-span-3">جدیدترین ها</h1>
     {% for article in articles %}
-    {% include 'main/components/article_card.html' with title=article.title img=article.image info=article.info %}
+    {% include 'main/components/article_card.html' with title=article.title img=article.image info=article.info id=article.id %}
     {% endfor %}
 
     <div class="col-span-3">
-        <a href=""><button class="btn btn-accent">مشاهده بیشتر</button></a>
+        <a href="{% url 'article_list' %}"><button class="btn btn-accent">مشاهده بیشتر</button></a>
     </div>
 </div>
 

@@ -3,7 +3,9 @@
 {% block main %}
 <div class="grid grid-cols-3 gap-2">
     {% for article in articles %}
-    {% include 'main/components/article_card.html' with title=article.title img=article.image info=article.info %}
+    {% include 'main/components/article_card.html' with title=article.title img=article.image info=article.info id=article.id %}
     {% endfor %}
 </div>
+
+{% include 'main/components/pagination.html' %}
 {% endblock %}
